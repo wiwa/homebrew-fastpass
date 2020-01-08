@@ -26,4 +26,4 @@ end
 EOF
 git add .
 git commit -am "Release $TAG"
-
+brew upgrade fastpass
