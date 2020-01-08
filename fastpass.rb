@@ -1,12 +1,14 @@
 require 'formula'
 
 class Fastpass < Formula
-  desc "Metals 1.12"
+  desc "Metals 1.13"
   homepage ""
-  version "1.12"
-  url "https://github.com/olafurpg/homebrew-fastpass/releases/download/v1.12/fastpass"
-  sha256 "512b6532aefb6cf23d1c120efa8b6641a2f1cb8018ff5c65f75292a830ee21f0"
+  version "1.13"
+  url "https://github.com/olafurpg/homebrew-fastpass/releases/download/v1.13/fastpass"
+  sha256 "800ff0364879dabf70ccc8645600ce975c9d1acb18aa9a0481958d535aafdda6"
+  depends_on "coursier/formulas/coursier"
+  depends_on "scalacenter/bloop/bloop"
   def install
-    bin.install 'fastpass'
+    bin.install "fastpass"
   end
 end

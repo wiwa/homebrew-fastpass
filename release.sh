@@ -16,8 +16,10 @@ class Fastpass < Formula
   version "$VERSION"
   url "$FASTPASS_URL"
   sha256 "$SHA"
+  depends_on "coursier/formulas/coursier"
+  depends_on "scalacenter/bloop/bloop"
   def install
-    bin.install 'fastpass'
+    bin.install "fastpass"
   end
 end
 EOF
