@@ -6,7 +6,7 @@ hub release create -a fastpass -m "Fastpass $VERSION" $VERSION
 BINARY=$(mktemp -d)/fastpass
 FASTPASS_URL=https://github.com/olafurpg/homebrew-fastpass/releases/download/$VERSION/fastpass
 curl -o $BINARY $FASTPASS_URL
-SHA=$(shasum $BINARY)
+SHA=$(shasum -a 256 $BINARY | awk '{ print $1 }')
 
 cat > fastpass.rb <<EOF
 require 'formula'
