@@ -14,6 +14,8 @@ class Fastpass < Formula
       '--main', 'scala.meta.internal.pantsbuild.BloopPants',
       '-o', 'fastpass',
       '-f'
+    old = '/usr/local/bin/fastpass'
+    File.delete(path_to_file) if File.exist?(path_to_file)
     bin.install 'fastpass'
   end
 end
