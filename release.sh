@@ -11,7 +11,7 @@ cat > fastpass.rb <<EOF
 require 'formula'
 
 class Fastpass < Formula
-  desc ""
+  desc "Metals $VERSION"
   homepage ""
   version "$VERSION"
   url "$FASTPASS_URL"
