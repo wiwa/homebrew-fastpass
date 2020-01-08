@@ -4,10 +4,8 @@ VERSION=$2
 TAG=v$2
 coursier bootstrap org.scalameta:metals_2.12:$METALS_VERSION -r sonatype:snapshots --main scala.meta.internal.pantsbuild.BloopPants -o fastpass -f
 hub release create -a fastpass -m "Fastpass $TAG" $TAG
-BINARY=$(mktemp -d)/fastpass
 FASTPASS_URL=https://github.com/olafurpg/homebrew-fastpass/releases/download/$TAG/fastpass
-curl -L -o $BINARY $FASTPASS_URL
-SHA=$(shasum -a 256 $BINARY | awk '{ print $1 }')
+SHA=$(curl -L $FASTPASS_URL | shasum -a 256 | awk '{ print $1 }')
 
 cat > fastpass.rb <<EOF
 require 'formula'
