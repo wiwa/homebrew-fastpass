@@ -3,18 +3,9 @@ require 'formula'
 class Fastpass < Formula
   desc ""
   homepage ""
-  url "https://github.com/olafurpg/homebrew-fastpass/archive/v1.0.zip"
-  sha256 "bc77b18d4b780520c4c26a37051d8becbebd370de7dc42ced53256a96e42e2fa"
-  depends_on 'coursier/formulas/coursier'
+  url "https://github.com/olafurpg/homebrew-fastpass/releases/download/v1.4/fastpass"
+  sha256 "862ef581c2df3bcd1075c80c1fd0a7880861dd5a  /var/folders/y5/gbz6gd297z57_5bg0nm589nr0000gp/T/tmp.I5o03FyK/fastpass"
   def install
-    system 'coursier',
-      'bootstrap', 
-      'org.scalameta:metals_2.12:0.7.6+707-c2394b32-SNAPSHOT',
-      '-r', 'sonatype:snapshots',
-      '--main', 'scala.meta.internal.pantsbuild.BloopPants',
-      '-o', 'fastpass',
-      '-f'
-    old = '/usr/local/bin/fastpass'
     File.delete(path_to_file) if File.exist?(path_to_file)
     bin.install 'fastpass'
   end
