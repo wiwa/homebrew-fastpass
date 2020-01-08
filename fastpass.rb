@@ -1,11 +1,11 @@
 require 'formula'
 
 class Fastpass < Formula
-  desc "Metals 1.15"
+  desc "Metals 1.16"
   homepage ""
-  version "1.15"
-  url "https://github.com/olafurpg/homebrew-fastpass/releases/download/v1.15/fastpass"
-  sha256 "f06f0fdb8bccb2fdd096c51dcd993e42b8be6ae5effcbedc5b3d6a94e8f0cd13"
+  version "1.16"
+  url "https://github.com/olafurpg/homebrew-fastpass/releases/download/v1.16/fastpass"
+  sha256 "e66f86a99a1a130307b1f50735373a322a7a04089c91dfcd2d891c72b5d04877"
   depends_on "coursier/formulas/coursier"
   depends_on "scalacenter/bloop/bloop"
   def install
