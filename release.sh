@@ -17,7 +17,6 @@ class Fastpass < Formula
   url "$FASTPASS_URL"
   sha256 "$SHA"
   def install
-    File.delete(path_to_file) if File.exist?(path_to_file)
     bin.install 'fastpass'
   end
 end
