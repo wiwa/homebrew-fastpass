@@ -6,7 +6,7 @@ coursier bootstrap org.scalameta:metals_2.12:$METALS_VERSION -r sonatype:snapsho
 hub release create -a fastpass -m "Fastpass $TAG" $TAG
 BINARY=$(mktemp -d)/fastpass
 FASTPASS_URL=https://github.com/olafurpg/homebrew-fastpass/releases/download/$TAG/fastpass
-curl -o $BINARY $FASTPASS_URL
+curl -L -o $BINARY $FASTPASS_URL
 SHA=$(shasum -a 256 $BINARY | awk '{ print $1 }')
 
 cat > fastpass.rb <<EOF
