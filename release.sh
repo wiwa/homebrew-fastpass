@@ -23,4 +23,5 @@ end
 EOF
 git add .
 git commit -am "Release $TAG"
+git push origin master
 brew upgrade fastpass
