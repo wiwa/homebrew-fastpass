@@ -1,7 +1,7 @@
 require 'formula'
 
 class Fastpass < Formula
-  desc "Metals 22"
+  desc "Metals 23"
   homepage ""
   version "20"
   url "https://github.com/olafurpg/homebrew-fastpass/releases/download/v20/fastpass.tar.gz"
@@ -9,7 +9,6 @@ class Fastpass < Formula
   depends_on "coursier/formulas/coursier"
   depends_on "scalacenter/bloop/bloop"
   def install
-    puts Dir.entries(".")
-    bin.install "bin/fastpass"
+    bin.install "fastpass"
   end
 end
