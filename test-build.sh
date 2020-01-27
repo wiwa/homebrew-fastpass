@@ -1,7 +1,7 @@
 set -eux
-rm -rf foo*
-mkdir foo
-cd foo
+rm -rf test-fastpass*
+mkdir test-fastpass
+cd test-fastpass
 tar xvf ../fastpass.tar.gz
 ./bin/fastpass --help | head -n 1
 ./bin/bloop exit
