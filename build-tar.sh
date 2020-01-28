@@ -18,11 +18,11 @@ $NATIVE -cp $CLASSPATH \
   -H:ReflectionConfigurationFiles=$(pwd)/reflection.json \
   scala.meta.internal.pantsbuild.BloopPants \
   bin/fastpass
-cs bootstrap --standalone \
-  ch.epfl.scala:bloopgun_2.12:$BLOOP_VERSION \
-  -o bin/bloop \
-  --force \
-  --main-class bloop.bloopgun.Bloopgun
+# cs bootstrap --standalone \
+#   ch.epfl.scala:bloopgun_2.12:$BLOOP_VERSION \
+#   -o bin/bloop \
+#   --force \
+#   --main-class bloop.bloopgun.Bloopgun
 $NATIVE -cp $(cs fetch ch.epfl.scala:bloopgun_2.12:$BLOOP_VERSION -p) \
   --initialize-at-build-time \
   --no-server \
