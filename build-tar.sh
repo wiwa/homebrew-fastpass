@@ -18,19 +18,19 @@ $NATIVE -cp $CLASSPATH \
   -H:ReflectionConfigurationFiles=$(pwd)/reflection.json \
   scala.meta.internal.pantsbuild.BloopPants \
   bin/fastpass
-# cs bootstrap --standalone \
-#   ch.epfl.scala:bloopgun_2.12:$BLOOP_VERSION \
-#   -o bin/bloop \
-#   --force \
-#   --main-class bloop.bloopgun.Bloopgun
-$NATIVE -cp $(cs fetch ch.epfl.scala:bloopgun_2.12:$BLOOP_VERSION -p) \
-  --initialize-at-build-time \
-  --no-server \
-  --no-fallback \
-  --allow-incomplete-classpath \
-  -H:EnableURLProtocols=https \
-  -H:ReflectionConfigurationFiles=$(pwd)/reflection.json \
-  bloop.bloopgun.Bloopgun bin/bloop
+# $NATIVE -cp $(cs fetch ch.epfl.scala:bloopgun_2.12:$BLOOP_VERSION -p) \
+#   --initialize-at-build-time \
+#   --no-server \
+#   --no-fallback \
+#   --allow-incomplete-classpath \
+#   -H:EnableURLProtocols=https \
+#   -H:ReflectionConfigurationFiles=$(pwd)/reflection.json \
+#   bloop.bloopgun.Bloopgun bin/bloop
+cs bootstrap --standalone \
+  ch.epfl.scala:bloopgun_2.12:$BLOOP_VERSION \
+  -o bin/bloop \
+  --force \
+  --main-class bloop.bloopgun.Bloopgun
 TAR=fastpass.tar.gz
 file bin/fastpass
 file bin/bloop
@@ -57,4 +57,3 @@ EOF
 git add .
 git commit -am "Release $TAG"
 git push origin master
-brew upgrade fastpass
