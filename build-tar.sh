@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 set -eux
-METALS_VERSION=${METALS_VERSION:-0.8.1-SNAPSHOT}
-BLOOP_VERSION=${BLOOP_VERSION:-1.4.0-RC1+33-dfd03f53}
+METALS_VERSION=${METALS_VERSION:-0.8.0+296-ea7d360b-SNAPSHOT}
+BLOOP_VERSION=${BLOOP_VERSION:-1.4.0-RC1-69-693de22a}
 VERSION="$1"
 TAG="v$1"
 NATIVE=$(~/.jabba/bin/jabba which --home graal-custom@19.3)/bin/native-image
