@@ -1,25 +1,13 @@
 #!/usr/bin/env zsh
 set -eux
-METALS_VERSION=${METALS_VERSION:-0.8.0+300-ac195d2c-SNAPSHOT}
+METALS_VERSION=${METALS_VERSION:-0.8.0+305-60af6828-SNAPSHOT}
 BLOOP_VERSION=${BLOOP_VERSION:-1.4.0-RC1-69-693de22a}
 VERSION="$1"
 TAG="v$1"
-NATIVE=$(~/.jabba/bin/jabba which --home graal-custom@19.3)/bin/native-image
-rm -rf bin
-mkdir bin
-./link-metals.sh $METALS_VERSION
-$NATIVE -cp $(cs fetch ch.epfl.scala:bloopgun_2.12:$BLOOP_VERSION -p) \
-  --no-server \
-  --initialize-at-build-time=scala.Symbol \
-  --initialize-at-build-time=scala.Function1 \
-  --initialize-at-build-time=scala.Function2 \
-  --initialize-at-build-time=scala.runtime.StructuralCallSite \
-  --initialize-at-build-time=scala.runtime.EmptyMethodCache \
-  --no-fallback \
-  --allow-incomplete-classpath \
-  -H:EnableURLProtocols=https \
-  -H:ReflectionConfigurationFiles=$(pwd)/reflection.json \
-  bloop.bloopgun.Bloopgun bin/bloop
+# rm -rf bin
+# mkdir bin
+# ./link-metals.sh $METALS_VERSION
+# ./link-bloop.sh $BLOOP_VERSION
 TAR=fastpass.tar.gz
 file bin/fastpass
 file bin/bloop
