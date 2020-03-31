@@ -1,6 +1,6 @@
 set -eux
 VERSION=$1
-NATIVE=$(~/.jabba/bin/jabba which --home graalvm@20.0)/bin/native-image
+NATIVE=$(~/.jabba/bin/jabba which --home graalvm@20.0.0)/bin/native-image
 $NATIVE -cp $(cs fetch ch.epfl.scala:bloopgun_2.12:$VERSION -p) \
   --no-server \
   --enable-http \

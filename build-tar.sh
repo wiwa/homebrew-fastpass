@@ -1,12 +1,12 @@
 #!/usr/bin/env zsh
 set -eux
-METALS_VERSION=${METALS_VERSION:-0.8.3+23-f91ffe81-SNAPSHOT}
-BLOOP_VERSION=${BLOOP_VERSION:-1.4.0-RC1-142-90456e06}
 VERSION="$1"
 TAG="v$1"
+METALS_VERSION=$2
+BLOOP_VERSION=$3
 rm -rf bin
 mkdir bin
-./link-metals.sh $METALS_VERSION
+./link-fastpass.sh $METALS_VERSION
 ./link-bloop.sh $BLOOP_VERSION
 TAR=fastpass.tar.gz
 file bin/fastpass
