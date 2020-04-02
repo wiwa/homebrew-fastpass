@@ -4,10 +4,10 @@ VERSION="$1"
 TAG="v$1"
 METALS_VERSION=$2
 BLOOP_VERSION=$3
-# rm -rf bin
-# mkdir bin
-# ./link-fastpass.sh $METALS_VERSION
-# ./link-bloop.sh $BLOOP_VERSION
+rm -rf bin
+mkdir bin
+./link-fastpass.sh $METALS_VERSION
+./link-bloop.sh $BLOOP_VERSION
 TAR=fastpass.tar.gz
 file bin/fastpass
 file bin/bloop
